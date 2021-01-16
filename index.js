@@ -1,6 +1,15 @@
 const express = require("express");
+const connect = require("./config/db");
+require("dotenv").config();
 const app = express();
-app.get("/", (res, req) => {
+
+// Connnect Monogodb Database
+connect();
+
+app.get("/", (req, res) => {
   res.send("Hello Mern Blog");
 });
-app.listen();
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log("Your App is Running");
+});
