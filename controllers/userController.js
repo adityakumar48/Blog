@@ -35,6 +35,9 @@ module.exports.register = async (req, res) => {
       const token = jwt.sign({ user }, process.env.SECRET, {
         expiresIn: "7d",
       });
+      return res
+        .status(200)
+        .json({ msg: "Your Account Has Been Created", token });
     } catch (error) {
       return res.status(500).json({ errors: error });
     }
