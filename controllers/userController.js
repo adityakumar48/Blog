@@ -10,8 +10,6 @@ module.exports.register = (req, res) => {
   const { name, email, password } = req.body;
   const errors = validationResult(req);
   if (!errors.isEmpty) {
-    res.json(errors.array());
-  } else {
-    res.json("You Have Done");
+    return res.status(400).json({ errors: errors.array()});
   }
 };
