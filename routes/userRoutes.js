@@ -1,7 +1,10 @@
 const app = require("express");
 const router = app.Router();
 
-const { register } = require("../controllers/userController");
+const {
+  register,
+  registerValidations,
+} = require("../controllers/userController");
 
-router.post("/register", register);
+router.post("/register", registerValidations, register);
 module.exports = router;
