@@ -49,8 +49,8 @@ module.exports.register = async (req, res) => {
   }
 };
 module.exports.loginValidation = [
-  body("email").not().isEmpty().trim().withMessage("Emial is required"),
-  body("password").not().isEmpty().withMessage("Password is Requires"),
+  body("email").not().isEmpty().trim().withMessage("Email is required"),
+  body("password").not().isEmpty().withMessage("Password is Required"),
 ];
 module.exports.login = async (req, res) => {
   const errors = validationResult(req);
