@@ -76,6 +76,6 @@ module.exports.login = async (req, res) => {
       return res.status(404).json({ errors: [{ msg: "User Not Found" }] });
     }
   } catch (error) {
-    return res, status(500).json({ errors: error });
+    return res.status(500).json({ errors: error });
   }
 };
