@@ -48,7 +48,7 @@ module.exports.register = async (req, res) => {
     return res.status(500).json({ errors: error });
   }
 };
-module.exports.loginValidation = [
+module.exports.loginValidations = [
   body("email").not().isEmpty().trim().withMessage("Email is required"),
   body("password").not().isEmpty().withMessage("Password is Required"),
 ];
