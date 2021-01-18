@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "server": "nodemon index.js",
+    "client": "npm start --prefix client",
+    "clientInstall": "npm install --prefix client",
+    "start": "concurrently \" npm run server \" \" npm run client \""
   },
   "repository": {
     "type": "git",
@@ -19,6 +22,7 @@
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
+    "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.9.2",
