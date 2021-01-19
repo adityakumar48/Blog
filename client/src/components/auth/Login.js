@@ -1,7 +1,7 @@
 import React from "react";
 
-function Login() {
-  return <div>This is Login Page</div>;
-}
+const Login = () => {
+  return <div>Login</div>;
+};
 
 export default Login;
